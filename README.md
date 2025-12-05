@@ -10,6 +10,7 @@
 </p>
 
 ---
+[NeURAX Ai](https://neuraxaihaniipp.space)
 
 ### **"Advanced Multi-Model Intelligence. Ready to assist."**
 
