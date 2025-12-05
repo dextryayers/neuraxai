@@ -57,6 +57,22 @@
 
 ---
 
+## 📸 Galeri Antarmuka
+
+Berikut adalah tampilan visual dari ekosistem NeURAX AI dalam berbagai mode operasi:
+
+| **Tampilan Awal PC** | **Thinking Mode** |
+|:---:|:---:|
+| <img src="https://files.catbox.moe/ussyls.png" alt="Hologram View" width="100%" /> | <img src="https://files.catbox.moe/nz6e0b.png" alt="Thinking Mode" width="100%" /> |
+| *Tampilan awal dengan hologram 3D responsif* | *Visualisasi saat AI melakukan penalaran mendalam* |
+
+| **Customized Ai Setting** | **Mobile Experience** |
+|:---:|:---:|
+| <img src="https://files.catbox.moe/f2azc1.png" alt="Chat UI" width="100%" /> | <img src="https://files.catbox.moe/a6nlja.png" alt="Mobile View" width="100%" /> |
+| *Menu Custom Tingkat Kepintaran Ai* | *Tampilan optimal & terkunci (fixed) pada HP* |
+
+---
+
 ## 🛠️ Stack Teknologi
 
 NeURAX AI dibangun di atas fondasi teknologi web modern yang berfokus pada performa dan estetika:
@@ -141,7 +157,7 @@ neurax-ai/
 
 <div align="center">
 
-**NeURAX AI** &copy; 2025. Dibuat dengan presisi dan imajinasi, haniipp.space.
+**NeURAX AI** &copy; 2025. Dibuat dengan presisi dan imajinasi.
 
 <img src="https://img.shields.io/badge/Made_with-Love_&_Code-FF0055?style=flat-square" alt="Made with Love" />
 
