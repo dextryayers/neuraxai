@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content" />
+    <title>NeURAX AI - Intelligent Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              glass: 'rgba(255, 255, 255, 0.05)',
+              glassBorder: 'rgba(255, 255, 255, 0.1)',
+              neonBlue: '#00f3ff',
+              neonPurple: '#bc13fe',
+              deepSpace: '#0f172a',
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'blink': 'blink 4s infinite both',
+              'wave': 'wave 2.5s ease-in-out infinite',
+              'emoji-wave': 'emojiWave 2.5s infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'bling': 'bling 3s linear infinite', 
+              'disco': 'disco 3s linear infinite',
+              'scanline': 'scanline 8s linear infinite',
+              'twinkle': 'twinkle 2s ease-in-out infinite',
+              'pop-bounce': 'popBounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'spin-slow': 'spin 10s linear infinite',
+              'spin-reverse-slow': 'spin 15s linear infinite reverse',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              blink: {
+                '0%, 48%, 52%, 100%': { transform: 'scaleY(1)' },
+                '50%': { transform: 'scaleY(0.1)' },
+              },
+              wave: {
+                /* Upward High Five Wave */
+                '0%': { transform: 'rotate(-140deg)' },
+                '50%': { transform: 'rotate(-170deg)' }, 
+                '100%': { transform: 'rotate(-140deg)' },
+              },
+              emojiWave: {
+                  '0%': { transform: 'rotate(0deg)' },
+                  '15%': { transform: 'rotate(14deg)' },
+                  '30%': { transform: 'rotate(-8deg)' },
+                  '40%': { transform: 'rotate(14deg)' },
+                  '50%': { transform: 'rotate(-4deg)' },
+                  '60%': { transform: 'rotate(10deg)' },
+                  '100%': { transform: 'rotate(0deg)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '200% center' },
+                '100%': { backgroundPosition: '-200% center' },
+              },
+              bling: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '300% 50%' },
+              },
+              disco: {
+                '0%': { backgroundPosition: '0% center' },
+                '100%': { backgroundPosition: '200% center' },
+              },
+              scanline: {
+                '0%': { backgroundPosition: '0% 0%' },
+                '100%': { backgroundPosition: '0% 100%' },
+              },
+              twinkle: {
+                '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+                '50%': { opacity: 0.3, transform: 'scale(0.5)' },
+              },
+              popBounce: {
+                '0%': { opacity: '0', transform: 'scale(0.5) translateY(10px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* --- NUCLEAR LAYOUT LOCK & UNIFORM DENSE STARS --- */
+      :root {
+        --app-height: 100dvh;
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        /* Allow scroll but prevent bounce on body */
+      }
+
+      html {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: fixed; /* Lock html */
+      }
+
+      body {
+        height: 100%; 
+        height: 100dvh; 
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden !important; 
+        position: fixed; 
+        inset: 0;
+        /* Removed touch-action: none to allow scrolling inside containers */
+        overscroll-behavior: none;
+        
+        /* Deep Space Background with EVENLY DISTRIBUTED STARS */
+        background-color: #02040a;
+        background-image: 
+            /* Layer 1: Fine uniform dust */
+            radial-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+            /* Layer 2: Small stars */
+            radial-gradient(white 1px, transparent 1px),
+            /* Layer 3: Scattered brighter stars */
+            radial-gradient(rgba(255,255,255,.5) 2px, transparent 2px);
+        
+        background-size: 
+            30px 30px,   /* Fine dust repeats often */
+            100px 100px, /* Small stars repeat moderately */
+            300px 300px; /* Bright stars repeat widely */
+            
+        background-position: 
+            0 0, 
+            50px 50px, 
+            150px 150px;
+            
+        color: #e2e8f0;
+      }
+      
+      #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        inset: 0;
+      }
+      
+      /* Clean Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Markdown Styling */
+      .markdown-body pre {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+      .markdown-body code {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #e2e8f0;
+        padding: 0.1rem 0.3rem;
+        border-radius: 0.25rem;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85em;
+      }
+      
+      .glass-panel {
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      /* Robot Specific */
+      .robot-eye {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 0 15px currentColor;
+      }
+      
+      .lego-hand {
+        width: 24px;
+        height: 24px;
+        border: 3px solid #64748b;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: #475569;
+        transform: rotate(-45deg);
+        position: relative;
+        box-shadow: 
+          inset -2px -2px 4px rgba(0,0,0,0.3),
+          0 2px 4px rgba(0,0,0,0.2);
+      }
+      
+      .lego-hand::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        background: #94a3b8;
+        border-radius: 50%;
+        box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+      }
+
+      .face-scanlines {
+        background: linear-gradient(
+          to bottom,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0) 50%,
+          rgba(0,0,0,0.3) 50%,
+          rgba(0,0,0,0.3)
+        );
+        background-size: 100% 3px;
+      }
+
+      /* RGB Animation */
+      .rgb-text {
+        background: linear-gradient(
+          to right, 
+          #2563eb, #9333ea, #ffffff, #9333ea, #2563eb
+        );
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: rgb-flow 2s linear infinite;
+        filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
+      }
+
+      @keyframes rgb-flow {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
+      }
+
+      /* RGB Input Glow */
+      @keyframes rgb-move {
+        0% { background-position: 0% 0%; }
+        50% { background-position: 100% 100%; }
+        100% { background-position: 0% 0%; }
+      }
+
+      .rgb-input-glow {
+        position: relative;
+        isolation: isolate; 
+        overflow: visible !important;
+        transition: background 0.3s, border-color 0.3s;
+      }
+
+      .rgb-input-glow:focus-within {
+        border-color: transparent !important;
+        box-shadow: none !important;
+        background: #050b14 !important; 
+      }
+
+      .rgb-input-glow::before {
+        content: "";
+        position: absolute;
+        inset: -3px; 
+        border-radius: 18px; 
+        background: linear-gradient(135deg, #2563eb, #9333ea, #ffffff, #9333ea, #2563eb);
+        background-size: 400% 400%;
+        animation: rgb-move 3s linear infinite;
+        z-index: -1; 
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .rgb-input-glow::after {
+        content: "";
+        position: absolute;
+        inset: -15px; 
+        border-radius: 24px;
+        background: linear-gradient(135deg, #2563eb, #9333ea, #ffffff, #9333ea, #2563eb);
+        background-size: 400% 400%;
+        animation: rgb-move 3s linear infinite;
+        filter: blur(25px); 
+        z-index: -2; 
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .rgb-input-glow:focus-within::before {
+        opacity: 0.5;
+      }
+      
+      .rgb-input-glow:focus-within::after {
+        opacity: 0.15;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "remark-gfm": "https://aistudiocdn.com/remark-gfm@^4.0.1",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
