@@ -141,7 +141,7 @@ neurax-ai/
 
 <div align="center">
 
-**NeURAX AI** &copy; 2025. Dibuat dengan presisi dan imajinasi.
+**NeURAX AI** &copy; 2025. Dibuat dengan presisi dan imajinasi, haniipp.space.
 
 <img src="https://img.shields.io/badge/Made_with-Love_&_Code-FF0055?style=flat-square" alt="Made with Love" />
 
